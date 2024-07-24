@@ -6,6 +6,7 @@ const project = new typescript.TypeScriptProject({
   name: 'nodejs-with-powertools-function',
   projenrcTs: true,
   eslint: false,
+  gitignore: ['.idea'],
   deps: ['aws-cdk-lib'],
   devDeps: ['@biomejs/biome', 'ts-jest', 'esbuild'],
   packageName: 'nodejs-with-powertools-function',
