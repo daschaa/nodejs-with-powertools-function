@@ -31,7 +31,5 @@
     ".projenrc.ts",
     "projenrc/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": []
 }

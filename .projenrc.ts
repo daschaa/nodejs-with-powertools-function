@@ -1,12 +1,24 @@
 import { typescript } from 'projen';
+import { NpmAccess } from 'projen/lib/javascript';
+
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
   name: 'nodejs-with-powertools-function',
   projenrcTs: true,
-
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  eslint: false,
+  deps: ['aws-cdk-lib'],
+  devDeps: ['@biomejs/biome', 'ts-jest', 'esbuild'],
+  packageName: 'nodejs-with-powertools-function',
+  npmAccess: NpmAccess.PUBLIC,
+  majorVersion: 1,
+  authorName: 'daschaa',
+  authorEmail: 'josh@joshuaw.de',
+  releaseToNpm: true,
 });
+project.tsconfigDev.removeExclude('node_modules');
+project.setScript('lint', 'biome lint ./src');
+project.addScripts({
+  'lint:fix': 'biome check --write ./src',
+});
+
 project.synth();
