@@ -15,6 +15,7 @@ const project = new typescript.TypeScriptProject({
   authorName: 'daschaa',
   authorEmail: 'josh@joshuaw.de',
   releaseToNpm: true,
+  repository: 'https://github.com/daschaa/nodejs-with-powertools-function',
 });
 project.tsconfigDev.removeExclude('node_modules');
 project.setScript('lint', 'biome lint ./src');
