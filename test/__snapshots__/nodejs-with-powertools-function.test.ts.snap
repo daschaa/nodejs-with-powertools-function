@@ -24,6 +24,7 @@ exports[`render initial function 1`] = `
         "Environment": {
           "Variables": {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "POWERTOOLS_SERVICE_NAME": "my-cool-service",
           },
         },
         "Handler": "index.handler",

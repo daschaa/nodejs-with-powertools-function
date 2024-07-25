@@ -8,7 +8,7 @@ The construct aims to be a drop-in replacement to the `NodejsFunction`. The only
 the function calls to the `NodejsFunction` has to be on the property `fn` from the `NodejsWithPowertoolsFunction`.
 
 ```typescript
-import { NodejsWithPowertoolsFunction } from './nodejs-with-powertools-function';
+import { NodejsWithPowertoolsFunction } from 'nodejs-with-powertools-function';
 
 class MyStack extends Stack {
   constructor(scope: Construct, id: string) {
