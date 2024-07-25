@@ -45,6 +45,12 @@ export type NodejsWithPowertoolsFunctionProps = {
  * Create a NodejsFunction that has the Lambda Powertools Layer enabled.
  */
 export class NodejsWithPowertoolsFunction extends Construct {
+
+  /**
+   * The underlying NodejsFunction construct.
+   */
+  public readonly fn: NodejsFunction;
+
   constructor(
     scope: Construct,
     id: string,
@@ -57,7 +63,7 @@ export class NodejsWithPowertoolsFunction extends Construct {
       `arn:aws:lambda:${Stack.of(this).region}:094274105915:layer:AWSLambdaPowertoolsTypeScriptV2:${props?.powertoolsVersion ?? "10"}`,
     );
 
-    new NodejsFunction(this, "Resource", {
+    this.fn = new NodejsFunction(this, "Resource", {
       ...props,
       layers: [powertoolsLayer],
       environment: {

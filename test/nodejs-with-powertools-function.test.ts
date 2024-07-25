@@ -6,6 +6,9 @@ test('render initial function', () => {
   const stack = new Stack();
   new NodejsWithPowertoolsFunction(stack, 'TestFunction', {
     entry: __dirname + '/test-function.ts',
+    powertoolsEnvironmentVariables: {
+      POWERTOOLS_SERVICE_NAME: 'my-cool-service'
+    }
   });
   expect(Template.fromStack(stack).toJSON()).toMatchSnapshot();
 });
