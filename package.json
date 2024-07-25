@@ -1,5 +1,6 @@
 {
   "name": "nodejs-with-powertools-function",
+  "description": "Simple wrapper for NodejsFunction that enables the Powertools Layer.",
   "repository": {
     "type": "git",
     "url": "https://github.com/daschaa/nodejs-with-powertools-function"
@@ -13,13 +14,11 @@
     "eject": "npx projen eject",
     "package": "npx projen package",
     "post-compile": "npx projen post-compile",
-    "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
-    "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen",
     "lint": "biome lint ./src",
@@ -47,6 +46,14 @@
   "dependencies": {
     "aws-cdk-lib": "^2.150.0"
   },
+  "keywords": [
+    "aws-cdk",
+    "construct",
+    "esbuild",
+    "nodejs",
+    "powertools",
+    "typescript"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "publishConfig": {
